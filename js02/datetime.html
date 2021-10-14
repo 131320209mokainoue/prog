@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dateオブジェクト</title>
+<script>
+    const now = new Date(); //リアルタイムを得るコード 下のコードはこのコードから必要な情報を抜き出すためのコード
+    const year = now.getFullYear(); //getYearではダメ
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    const day = now.getDay();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    const s = now.getSeconds();
+    let d = "";
+    let timezone = "";
+    if(day==0){
+        d = "日";
+    }else if(day==1){
+        d = "月";
+    }else if(day==2){
+        d = "火";
+    }else if(day==3){
+        d = "水";
+    }else if(day==4){
+        d = "木";
+    }else if(day==5){
+        d = "金";
+    }else if(day==6){
+        d = "土";
+    }
+    if(0 <= h && h < 12){
+        timezone = "Good morning!";
+    }else if(12 <= h && h < 17){
+        timezone = "Good afternoon!";
+    }else if(17 <= h && h < 24){
+        timezone = "Good evening!";
+    }
+    const str = "現在日時は";
+    const msg = "現在時刻は";
+    console.log(timezone);
+    console.log( str + year + "年" + month + "月" + date + "日" + "の" + d + "曜日です");
+    console.log( msg + h + "時" + m + "分" + s + "秒" + "です");
+    function showClock1(){ //function→単調な処理を1つにまとめ、どこからでも使えるように効率化する目的で使われる関数
+        const now = new Date();
+        const h = now.getHours();
+        const m = now.getMinutes();
+        const s = now.getSeconds(); //document→ブラウザ上で表示されたドキュメントを操作可能
+        const time = h + ":" + m + ":" + s; //getElementById→任意のHTMLタグで指定したIDにマッチするドキュメント要素を取得可能
+        document.getElementById("RealtimeClockArea").innerHTML = time; //innerHTML→html要素の中身を変更可能
+    }
+    setInterval('showClock1()',1000); //setInterval→一定時間ごとに特定の処理を繰り返すコード 1000は1000ミリ秒＝1秒
+</script>
+<style>
+    html{
+        background-color: #000000;
+        color: #ffffff;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <!-- <h2>Dateオブジェクト：console.logで確認</h2> -->
+    <h1 id="RealtimeClockArea">Real time</h1>
+</body>
+</html>
+<!--現在時刻をhtml上でも表示してみたかったので下記サイトを参考に作成しました-->
+<!--https://www.nishishi.com/javascript-tips/realtime-clock-setinterval.html-->
