@@ -1,0 +1,39 @@
+body{
+    background-color: #ac8c6e;
+}
+.wrapper{
+    max-width: 600px;
+    margin: 0 auto;
+    color: #302205;
+}
+#header {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    margin: 1rem 0 0;
+}
+#calendar {
+    text-align: center;
+    width: 100%;
+}
+table {
+    background-color: #c7b19c;
+    outline: 2px solid #685209;
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    font-size: 20px;
+    outline: 1px solid #685209;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+/*日曜日*/
+td:first-child {
+    color: #630000;
+}
+/*土曜日*/
+td:last-child {
+    color: #09005a;
+}
