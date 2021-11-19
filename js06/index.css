@@ -1,0 +1,73 @@
+body{
+    background-color: #2a4636;
+    color: #c7c0ad;
+    font-size: 32px;
+    font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 0;
+}
+header{
+    background-color: #c7c0ad;
+    color: #2a4636;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.3ex;
+    border-color: #9e772e;
+    margin: 40px 10% 30px 10%;
+    padding: 5px 25px 18px 25px;
+}
+h1{
+    font-size: 100%;
+}
+#time{
+    font-size: 70%;
+}
+ul{
+    display: table;
+    table-layout: fixed;
+    font-size: 80%;
+    width: 96%;
+    margin: 20px 3% 25px 3%;
+    padding: 0;
+}
+#key{
+    background-color: #f1f0ec;
+    border-radius: 5px;
+    font-size: 80%;
+    width: 30%;
+    margin-left: 10%;
+    margin-right: 5%;
+    padding: 0 55px 0 5px;
+}
+button{
+    background-color: #f1f0ec;
+    color: #2a4636;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #831616;
+    color: #c7c0ad;
+}
+p{
+    font-size: 65%;
+    margin: 5px 10% 0 10%;
+}
+ol{
+    font-size: 60%;
+    margin: 5px 17% 0 10%;
+}
+#list{
+  background-color: #c7c0ad;
+  color: #2a4636;
+  border-radius: 10px;
+  border-style: solid; 
+  border-width: 0.3ex;
+  border-color: #9e772e;
+  font-size: 80%;
+  margin: 40px 12% 40px 10%;
+  padding: 18px 25px 20px 25px;
+}
