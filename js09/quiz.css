@@ -1,0 +1,72 @@
+body{
+    background-color: #2a4636;
+    color: #c7c0ad;
+    font-size: 20px;
+    font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 30px;
+    padding: 0;
+}
+header{
+    background-color: #c7c0ad;
+    color: #831616;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 0.3ex;
+    border-color: #9e772e;
+    text-align: center;
+    margin: 40px 10% 30px 10%;
+    padding: 5px 25px 15px 25px;
+}
+#kazu{
+    font-size: 105%;
+    text-align: center;
+    margin: 0px 0% 30px 0%;
+}
+#quest{
+    font-size: 110%;
+    margin: 40px 10% 40px 10%;
+}
+h2{
+    color: #9e772e;
+    margin: 60px 10% 0px 10%;
+}
+p{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#text{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#main{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#count{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#aisatu{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#kao{
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}#setumei{
+    font-size: 20%;
+    text-align: center;
+    margin: 20px 10% 20px 10%;
+    padding: 0px 25px 0px 25px;
+}
+#kaisetu{
+    margin: 50px 10% 20px 10%;
+}
