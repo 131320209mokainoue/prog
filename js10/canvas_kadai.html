@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="canvas.css"> -->
+    <title>Canvas</title>
+</head>
+
+<body>
+    <section>
+        <h1>Canvas</h1>
+        <canvas id="iro" width="20" height="20"></canvas>
+        <p id="view">線の太さ：</p>
+        <!-- <p>色と太さが反映されない。（なぜ？）</p> -->
+        <nav>
+            <input type="color" id="col">
+            <input type="range" id="size" min="1" max="100" value="50">
+            <button id="clear_btn">Clear</button>
+        </nav>
+        <canvas id="drowarea" width="500" height="500" style="border:1px solid blue;"></canvas>
+    </section>
+
+
+    <script
+    src = "https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity = "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin = "anonymous"></script>
+    <script>
+        //初期化(変数letで宣言)
+        let canvas_mouse_event = false; //スイッチ [ true=線を引く, false=線は引かない ]  ＊＊＊
+        let oldX = 0; //１つ前の座標を代入するための変数
+        let oldY = 0; //１つ前の座標を代入するための変数
+        let bold_line = "#line"; //ラインの太さをここで指定(スライダー値を代入)
+        let color = "#col"; //ラインの色をここで指定(カラーピッカー値を代入)
+
+        const can = $("#drowarea")[0]; //CanvasElement
+        const ctx = can.getContext("2d"); //描画するための準備！
+
+        $("#col").on("change",function(){
+            const v = $(this).val();
+            $("#iro").css("background", v);
+            $("body").css("#col", v);
+            console.log(v);
+            console.log(color);
+        });
+
+        $("#size").on("change",function(){
+            const v = $(this).val();
+            $("#view").html("線の太さ：" + v + "px");
+            $("#line").val(v);
+            console.log(v);
+            console.log(bold_line);
+        });
+
+        //mousedown：フラグをTrue
+        $(can).on("mousedown", function(e){
+            oldX = e.offsetX; //MOUSEDOWNしたX横座標取得
+            oldY = e.offsetY; //MOUSEDOWNしたY高さ座標取得
+            canvas_mouse_event=true;
+        });
+
+        //mousemove：フラグがTrueだったら描く ※e：イベント引数取得
+        $(can).on("mousemove", function(e){
+            if(canvas_mouse_event==true){
+                const px = e.offsetX;
+                const py = e.offsetY;
+                ctx.strokeStyle = color; //#ccc
+                ctx.lineWidth = bold_line; //3
+                ctx.beginPath(); //初期化
+                ctx.lineJoin= "round"; //ペン先を丸くする（滑らかになるよ！）
+                ctx.lineCap = "round"; //ペン先を丸くする（滑らかになるよ！）
+                ctx.moveTo(oldX, oldY); //線の開始
+                ctx.lineTo(px, py); //線の終了
+                ctx.stroke(); //線を引く
+                oldX = px; //新しい座標を古い座標に入れ替える
+                oldY = py; //新しい座標を古い座標に入れ替える
+                if(px > 100){
+                    ctx.closePath();
+                };
+                if(py > 100){
+                    ctx.closePath();
+                };
+            }
+        });
+
+        //mouseup：フラグをfalse
+        $(can).on("mouseup", function(){
+            canvas_mouse_event=false;
+        });
+
+        //#clear_btn：クリアーボタンAction
+        $("#clear_btn").on("click", function(){
+            ctx.beginPath();
+            ctx.clearRect(0, 0, can.width, can.height);
+        });
+
+    </script>
+</body>
+</html>
